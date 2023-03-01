@@ -1,5 +1,5 @@
-import { CardProfile, Logo, Picture, AvatarImg, FrameAvatar, Tweet, Followers, Btn } from "./Card.styled";
-import { LogoIcon } from "../image/logo";
+import { CardProfile,  Picture, AvatarImg, FrameAvatar, Tweet, Followers, Btn } from "./Card.styled";
+//import { LogoIcon } from "../image/logo";
 
 
 export const Card = () => {
