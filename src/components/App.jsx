@@ -4,8 +4,7 @@ import { Card } from "./Card/Card";
 export const App = () => {
   return (
     <div>
-      <Card/>
-     
+      <Card/>     
     </div>
   );
 };

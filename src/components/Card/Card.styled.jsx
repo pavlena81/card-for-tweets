@@ -1,58 +1,58 @@
 import styled from 'styled-components';
 import picture from '../image/picture.png';
-
+import avatarhansel from '../image/avatarhansel.png';
 
 export const CardProfile = styled.div`
- position: relative;
- width: 380px;
- height: 460px;
- display: flex;
- flex-direction:column;
- margin: 0 auto;
+position: relative;
+top: 20px;
+width: 380px;
+height: 460px;
+display: flex;
+flex-direction:column;
+margin: 0 auto;
  
- align-items: center;
- 
- background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
+background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
 box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
 border-radius: 20px;
 `
 export const Logo = styled.div`
- display: flex;
- justify-content: flex-start;
- align-items: flex-start;
+position: absolute;
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
 margin-top: 20px;
 margin-left:20px;
-border: 1px solid white;
+
 color: rgba(255, 255, 255, 0,3);
 width: 76px;
 height: 22px;
 `
+
 export const Picture = styled.div`
-    position: absolute;
-    background-image: url('${picture}');
-    left: 36px;
-    top: 28px;
-    width: 306px;
-    height: 168px;
-    z-index: 1;
+position: absolute;
+background-image: url('${picture}');
+left: 36px;
+top: 28px;
+width: 306px;
+height: 168px;
+z-index: 1;
 `
 export const FrameAvatar = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;  
-height: 100%;
+
 margin:0 auto;
 width: 80px;
 height: 80px;
 background: #EBD8FF;
 box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), inset 0px -2.19582px 4.39163px #AE7BE3, inset 0px 4.39163px 3.29372px #FBF8FF;
 border-radius: 50%;
-//border: 13.1749px;
 margin-bottom: 26px;
 margin-top: 178px;
 position: relative;
 
-  &::before {
+&::before {
   content: "";
   position: absolute;
   left: -150px;
@@ -73,7 +73,7 @@ position: relative;
   width: 151px;
   height: 8px;
   background: #EBD8FF;
-  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.43693px #AE7BE3, inset 0px 3.43693px 2.5777px #FBF8FF;
+  box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), inset 0px -2.19582px 4.39163px #AE7BE3, inset 0px 4.39163px 3.29372px #FBF8FF;
 }
 `
 
@@ -81,14 +81,14 @@ position: relative;
 export const AvatarImg = styled.img`
 width: 62px;
 height: 62px;
-// margin:0 auto;
-// margin-bottom: 26px;
+
+margin:0 auto;
 border-radius: 50%;
-background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
+background:  url('${avatarhansel}'), #5736A3 no-repeat center center fixed;
 `
 export const Tweet = styled.p`
 margin: 0;
-// margin:0 auto;
+margin:0 auto;
 margin-bottom: 16px;
 font-family: 'Montserrat';
 font-style: normal;
@@ -100,7 +100,7 @@ color: #EBD8FF;
 `
 export const Followers = styled.p`
 margin: 0;
-// margin:0 auto;
+margin:0 auto;
 margin-bottom: 26px;
 font-family: 'Montserrat';
 font-style: normal;
@@ -116,12 +116,12 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
+margin:0 auto;
 
 border: none;
 padding: 0px;
 width: 196px;
 height:50px;
-// padding: 14px, 28px, 14px, 28px;
 border-radius: 10px;
 
 font-family: 'Montserrat';
@@ -135,4 +135,6 @@ color: #373737;
 
 background: #EBD8FF;
 box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+
+cursor: pointer;
 `
