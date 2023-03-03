@@ -1,8 +1,32 @@
+import { useState, useEffect } from 'react';
+
 import { CardProfile, Logo, Picture, AvatarImg, FrameAvatar, Tweet, Followers, Btn } from "./Card.styled";
 import { LogoIcon } from "../image/logo";
 
 
 export const Card = () => {
+    
+    const [following, setFollowing] = useState(false);
+    const [followers, setFollowers] = useState(() => { 
+        const storeFollowers = localStorage.getItem('followers');
+        return storeFollowers ? parseInt(storeFollowers) : 100500;
+    }); 
+    
+    useEffect(() => {
+        localStorage.setItem('following', following);
+        localStorage.setItem('followers', followers);
+    }, [following, followers]);
+
+    const handleClick = () => {
+        if (following) {
+            setFollowing(false);
+            setFollowers(prevFolowers => prevFolowers - 1);
+        }else { 
+            setFollowing(true);
+            setFollowers(prevFolowers => prevFolowers + 1);
+    }
+  };
+    
     
     return (
         <CardProfile>           
@@ -14,10 +38,13 @@ export const Card = () => {
                 <AvatarImg />
             </FrameAvatar>
             <Tweet>777 tweets</Tweet>
-            <Followers>Followers</Followers>
+            <Followers><span>{followers}</span>Followers</Followers>
             <Btn
                 type="button"
-                aria-label="follow">Follow</Btn>
+                onClick={handleClick} style={{backgroundColor: following ? "#5CD3A8" : "#EBD8FF"}}
+                aria-label="follow">
+                <span>{followers}</span>
+                {following ? "Following" : "Follow"}</Btn>
         </CardProfile>
     )
 }
