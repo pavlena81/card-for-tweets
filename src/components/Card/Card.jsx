@@ -6,7 +6,11 @@ import { LogoIcon } from "../image/logo";
 
 export const Card = () => {
     
-    const [following, setFollowing] = useState(false);
+    const [following, setFollowing] = useState(() => {
+        const storeFollowing = localStorage.getItem('following');
+        return storeFollowing === 'true' ? true : false;
+    });
+    
     const [followers, setFollowers] = useState(() => { 
         const storeFollowers = localStorage.getItem('followers');
         return storeFollowers ? parseInt(storeFollowers) : 100500;
