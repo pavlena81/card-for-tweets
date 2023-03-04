@@ -4,7 +4,7 @@ import avatarhansel from '../image/avatarhansel.png';
 
 export const CardProfile = styled.div`
 position: relative;
-top: 20px;
+top: 80px;
 width: 380px;
 height: 460px;
 display: flex;

@@ -4,6 +4,10 @@ import { CardProfile, Logo, Picture, AvatarImg, FrameAvatar, Tweet, Followers, B
 import { LogoIcon } from "../image/logo";
 
 
+const formatNumber = (str) => {
+        return str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+    
 export const Card = () => {
     
     const [following, setFollowing] = useState(() => {
@@ -29,9 +33,9 @@ export const Card = () => {
             setFollowing(true);
             setFollowers(prevFolowers => prevFolowers + 1);
     }
+    
   };
-    
-    
+        
     return (
         <CardProfile>           
             <Logo>
@@ -42,12 +46,12 @@ export const Card = () => {
                 <AvatarImg />
             </FrameAvatar>
             <Tweet>777 tweets</Tweet>
-            <Followers><span>{followers}</span>Followers</Followers>
+            <Followers><span>{formatNumber(followers)}</span>Followers</Followers>
             <Btn
                 type="button"
                 onClick={handleClick} style={{backgroundColor: following ? "#5CD3A8" : "#EBD8FF"}}
                 aria-label="follow">
-                <span>{followers}</span>
+                <span>{formatNumber(followers)}</span>
                 {following ? "Following" : "Follow"}</Btn>
         </CardProfile>
     )
