@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { CardProfile, Logo, Picture, AvatarImg, FrameAvatar, Tweet, Followers, Btn } from "./Card.styled";
 import { LogoIcon } from "../image/logo";
-
+import avatarhansel from '../image/avatarhansel.png';
 
 const formatNumber = (str) => {
         return str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -43,15 +43,14 @@ export const Card = () => {
             </Logo>
             <Picture></Picture>
             <FrameAvatar>
-                <AvatarImg />
+                <AvatarImg src={avatarhansel} width="62" height="62" alt="avatar"/>
             </FrameAvatar>
             <Tweet>777 tweets</Tweet>
-            <Followers><span>{formatNumber(followers)}</span>Followers</Followers>
+            <Followers><span style={{marginRight:"10px"}}>{formatNumber(followers)}</span>Followers</Followers>
             <Btn
                 type="button"
                 onClick={handleClick} style={{backgroundColor: following ? "#5CD3A8" : "#EBD8FF"}}
-                aria-label="follow">
-                <span>{formatNumber(followers)}</span>
+                aria-label="follow">                
                 {following ? "Following" : "Follow"}</Btn>
         </CardProfile>
     )

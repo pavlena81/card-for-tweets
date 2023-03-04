@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import picture from '../image/picture.png';
-import avatarhansel from '../image/avatarhansel.png';
 
 export const CardProfile = styled.div`
 position: relative;
@@ -79,12 +78,9 @@ position: relative;
 
 
 export const AvatarImg = styled.img`
-width: 62px;
-height: 62px;
-
-margin:0 auto;
+margin:0;
 border-radius: 50%;
-background:  url('${avatarhansel}'), #5736A3 no-repeat center center fixed;
+background:#5736A3;
 `
 export const Tweet = styled.p`
 margin: 0;
